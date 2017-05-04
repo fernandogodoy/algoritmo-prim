@@ -16,7 +16,7 @@ Esta aplicação possui a implementação do Algoritmo de Prim para geração da
 2) Representação gráfica da Árvore Mínima.
 
 <html>
-	<img src="https://github.com/fernandogodoy/algoritmo-kruskal/blob/master/print.PNG"/>
+	<img src="https://github.com/fernandogodoy/algoritmo-prim/blob/master/resultado.PNG"/>
 
 </html>
 
