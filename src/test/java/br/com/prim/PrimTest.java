@@ -44,12 +44,13 @@ public class PrimTest {
 		Arvore arvore = FileUtil.readFile();
 		Assert.assertNotNull(arvore);
 		Prim prim = new Prim();
-		prim.getArvoreMinima().add(new Aresta("1", "2", "10"));
-		prim.getArvoreMinima().add(new Aresta("3", "4", "10"));
-		prim.getArvoreMinima().add(new Aresta("5", "6", "10"));
-		Assert.assertFalse(prim.isJaAdicionado(new Aresta("4", "2", "10")));
-		Assert.assertTrue(prim.isJaAdicionado(new Aresta("2", "1", "10")));
-		Assert.assertFalse(prim.isJaAdicionado(new Aresta("2", "5", "10")));
+		Arvore arvoreMinima = prim.getArvoreMinima();
+		arvoreMinima.add(new Aresta("1", "2", "10"));
+		arvoreMinima.add(new Aresta("3", "4", "10"));
+		arvoreMinima.add(new Aresta("5", "6", "10"));
+		Assert.assertFalse(arvoreMinima.isAdicionada(new Aresta("4", "2", "10")));
+		Assert.assertTrue(arvoreMinima.isAdicionada(new Aresta("2", "1", "10")));
+		Assert.assertFalse(arvoreMinima.isAdicionada(new Aresta("2", "5", "10")));
 	}
 	
 	
