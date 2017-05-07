@@ -1,6 +1,6 @@
 # Algoritmo de Prim
 
-Esta aplicação possui a implementação do Algoritmo de Prim para geração da árvore mínima, fazendo uso da biblioteca: http://jgrapht.org/ para gerar uma representação gráfica do resultado.
+Esta aplicação possui a implementação do [Algoritmo de Prim](https://pt.wikipedia.org/wiki/Algoritmo_de_Prim) para geração da árvore mínima, fazendo uso da biblioteca: http://jgrapht.org/ para gerar uma representação gráfica do resultado.
 
 1) Como resultado da execução, terá a escrita no console onde é apresentado: 
 
