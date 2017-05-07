@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import br.com.prim.model.Aresta;
-import br.com.prim.model.Arvore;
+import br.com.prim.model.Grafo;
 
 public class FileUtil {
 
@@ -17,9 +17,9 @@ public class FileUtil {
 	private static final Pattern REGEX = Pattern.compile("(.*) -> (.*)", Pattern.DOTALL);
 	private static final Pattern REGEX_VERTEX = Pattern.compile("(.*)-(.*)", Pattern.UNIX_LINES);
 
-	public static Arvore readFile() {
+	public static Grafo readFile() {
 		Path path = getPath();
-		Arvore arvore = new Arvore();
+		Grafo arvore = new Grafo();
 		try (Scanner scanner = new Scanner(path.toFile())) {
 			while (scanner.hasNext()) {
 				Matcher matcher = REGEX.matcher(scanner.nextLine().trim());

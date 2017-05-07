@@ -11,12 +11,22 @@ public class Vertice {
 
 	private String id;
 
+	private boolean isVisitado;
+
 	public Vertice(String id) {
 		this.id = id;
 	}
 
 	public String getId() {
 		return id;
+	}
+
+	public void visitado() {
+		this.isVisitado = true;
+	}
+
+	public boolean isVisitado() {
+		return isVisitado;
 	}
 
 	@Override

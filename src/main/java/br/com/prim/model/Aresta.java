@@ -13,7 +13,7 @@ public class Aresta implements Comparable<Aresta> {
 	private Vertice origem;
 
 	private Vertice destino;
-	
+
 	private BigDecimal peso;
 
 	public Aresta(String origem, String destino, String peso) {
@@ -61,7 +61,7 @@ public class Aresta implements Comparable<Aresta> {
 
 	@Override
 	public int compareTo(Aresta o) {
-		return this.peso.compareTo(o.peso);
+		return this.getPeso().compareTo(o.getPeso());
 	}
 
 }

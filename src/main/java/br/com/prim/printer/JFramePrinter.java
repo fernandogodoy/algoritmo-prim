@@ -1,6 +1,7 @@
 package br.com.prim.printer;
 
 import java.awt.Dimension;
+import java.awt.Frame;
 
 import javax.swing.JApplet;
 import javax.swing.JFrame;
@@ -66,7 +67,7 @@ public class JFramePrinter extends JApplet implements Printer {
 		frame.setTitle("Árvore Geradora Mínima - Algoritmo de Prim");
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.pack();
-		frame.setSize(DEFAULT_SIZE);
+		frame.setExtendedState(Frame.MAXIMIZED_BOTH);
 		frame.setVisible(true);
 		frame.setLocationRelativeTo(null);
 	}

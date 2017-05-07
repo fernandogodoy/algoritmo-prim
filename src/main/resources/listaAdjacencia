@@ -1,6 +1,14 @@
-1 -> 2-1,3-5,4-7,5-9
-2 -> 1-1,3-6,4-4,5-3
-3 -> 1-5,2-6,4-5,6-1
-4 -> 1-7,2-4, 3-5,5-8,6-3
-5 -> 1-9,2-3,4-8
-6 -> 3-1,4-3
+Foz do Iguaçu -> Cascavel-125
+Cascavel -> Guarapuava-200,Campo Mourão-150,Foz do Iguaçu-125
+Campo Mourão -> Maringá-90,Guarapuava-175,Cascavel-150
+Maringá -> Campo Mourão-90,Mandaguari-35
+Guarapuava -> Cascavel-200,Campo Mourão-175,Jandaia do Sul-220,Ponta Grossa-150,Irati-90
+Mandaguari -> Maringá-35,Arapongas-25,Jandaia do Sul-10
+Jandaia do Sul -> Mandaguari-10,Apucarana-20,Guarapuava-220
+Arapongas -> Mandaguari-25,Apucarana-20,Londrina-30
+Apucarana -> Jandaia do Sul-20,Arapongas-20,Ponta Grossa-205
+Londrina -> Arapongas-30,Ourinhos-125
+Ourinhos -> Londrina-125,Ponta Grossa-275
+Ponta Grossa -> Apucarana-205,Curitiba-110,Ourinhos-275
+Curitiba -> Ponta Grossa-110,Irati-135
+Irati -> Curitiba-135,Guarapuava-90
