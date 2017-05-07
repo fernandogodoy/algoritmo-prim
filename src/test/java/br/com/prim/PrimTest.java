@@ -18,7 +18,7 @@ public class PrimTest {
 	public void montaListaTest() {
 		Grafo grafo = FileUtil.readFile();
 		Assert.assertNotNull(grafo);
-		Assert.assertEquals(11, grafo.getQtdArestas().intValue());
+		Assert.assertEquals(22, grafo.getQtdArestas().intValue());
 	}
 
 	@Test
