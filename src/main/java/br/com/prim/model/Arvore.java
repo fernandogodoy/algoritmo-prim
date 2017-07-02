@@ -3,34 +3,43 @@ package br.com.prim.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.fggraph.model.Tree;
+
+
 /**
  * Representação da Árvore
  * 
  * @author Fernando
  *
  */
-public class Arvore {
+public class Arvore implements Tree<Aresta, Vertice> {
+
+	private static final long serialVersionUID = 1L;
 
 	private List<Aresta> arestas = new ArrayList<>();
 
 	private List<Vertice> vertices = new ArrayList<>();
 
+	@Override
 	public void add(Aresta aresta) {
 		this.arestas.add(aresta);
-		this.vertices.add(aresta.getOrigem());
-		this.vertices.add(aresta.getDestino());
+		this.vertices.add(aresta.getOrigin());
+		this.vertices.add(aresta.getTarget());
 	}
 
 	public boolean isAdicionado(Vertice destino) {
-		return this.getVertices().contains(destino);
+		return this.getVertex().contains(destino);
 	}
 
-	public final List<Vertice> getVertices() {
+	@Override
+	public final List<Vertice> getVertex() {
 		return vertices;
 	}
 
-	public final List<Aresta> getArestas() {
+	@Override
+	public final List<Aresta> getEdges() {
 		return arestas;
 	}
+
 
 }

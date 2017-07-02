@@ -3,12 +3,16 @@ package br.com.prim.model;
 import java.math.BigDecimal;
 import java.util.Objects;
 
+import br.com.fggraph.model.Edge;
+
 /**
  * 
  * @author Fernando
  *
  */
-public class Aresta implements Comparable<Aresta> {
+public class Aresta implements Edge {
+
+	private static final long serialVersionUID = 1L;
 
 	private Vertice origem;
 
@@ -22,15 +26,18 @@ public class Aresta implements Comparable<Aresta> {
 		this.peso = new BigDecimal(peso);
 	}
 
-	public Vertice getOrigem() {
+	@Override
+	public Vertice getOrigin() {
 		return origem;
 	}
 
-	public Vertice getDestino() {
+	@Override
+	public Vertice getTarget() {
 		return destino;
 	}
 
-	public BigDecimal getPeso() {
+	@Override
+	public BigDecimal getCost() {
 		return peso;
 	}
 
@@ -49,19 +56,9 @@ public class Aresta implements Comparable<Aresta> {
 				&& Objects.equals(peso, castOther.peso);
 	}
 
-	public boolean isExistente(final Aresta aresta) {
-		return (Objects.equals(origem, aresta.origem) && Objects.equals(destino, aresta.destino))
-				|| (Objects.equals(origem, aresta.destino) && Objects.equals(destino, aresta.origem));
-	}
-
 	@Override
 	public int hashCode() {
 		return Objects.hash(origem, destino, peso);
-	}
-
-	@Override
-	public int compareTo(Aresta o) {
-		return this.getPeso().compareTo(o.getPeso());
 	}
 
 }

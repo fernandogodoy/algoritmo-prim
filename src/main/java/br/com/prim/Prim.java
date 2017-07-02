@@ -4,13 +4,12 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.fggraph.response.ResponseBuilder;
+import br.com.fggraph.response.ResultDTO;
 import br.com.prim.model.Aresta;
 import br.com.prim.model.Arvore;
 import br.com.prim.model.Grafo;
 import br.com.prim.model.Vertice;
-import br.com.prim.printer.ConsolePrinter;
-import br.com.prim.printer.JFramePrinter;
-import br.com.prim.printer.Printer;
 import br.com.prim.util.FileUtil;
 
 /**
@@ -19,25 +18,14 @@ import br.com.prim.util.FileUtil;
  *
  */
 public class Prim {
-
+	
 	private Arvore arvore = new Arvore();
 	private List<Aresta> adjacentes = new ArrayList<>();
 
 	public static void main(String[] args) {
 		Prim prim = new Prim();
 		prim.execute();
-		prim.printConsole();
-		prim.printJFrame();
-	}
-
-	private void printJFrame() {
-		Printer printer = new JFramePrinter(arvore);
-		printer.print();
-	}
-
-	private void printConsole() {
-		Printer printer = new ConsolePrinter(arvore);
-		printer.print();
+		prim.printResult();
 	}
 
 	private void execute() {
@@ -48,7 +36,7 @@ public class Prim {
 
 		while (aresta != null) {
 			arvore.add(aresta);
-			origem = aresta.getDestino();
+			origem = aresta.getTarget();
 			aresta = selecionarAresta(grafo, origem);
 		}
 	}
@@ -63,8 +51,8 @@ public class Prim {
 		BigDecimal custo = new BigDecimal(Long.MAX_VALUE);
 		Aresta selecionada = null;
 		for (Aresta aresta : arestas) {
-			if (custo.compareTo(aresta.getPeso()) == 1 && !isVisitado(aresta)) {
-				custo = aresta.getPeso();
+			if (custo.compareTo(aresta.getCost()) == 1 && !isVisitado(aresta)) {
+				custo = aresta.getCost();
 				selecionada = aresta;
 			}
 		}
@@ -72,6 +60,21 @@ public class Prim {
 	}
 
 	private boolean isVisitado(Aresta aresta) {
-		return arvore.isAdicionado(aresta.getDestino()) && arvore.isAdicionado(aresta.getOrigem());
+		return arvore.isAdicionado(aresta.getTarget()) && arvore.isAdicionado(aresta.getOrigin());
+	}
+	
+	private void printResult() {
+		ResponseBuilder<Arvore> builder = new ResponseBuilder<>(arvore);
+		ResultDTO dto = builder.withCost()
+								.withTextResult()
+								.withGraphicResult()
+								.build();
+		
+		System.out.println(dto.getResult());
+		System.out.println("Z= " + dto.getCost());
+		
+		dto.getView()
+			.name("Árvore Geradora Mínima - Algoritmo de Prim")
+			.open();
 	}
 }

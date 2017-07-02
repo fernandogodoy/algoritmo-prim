@@ -46,6 +46,13 @@
 			</plugin>
 		</plugins>
 	</build>
+	<repositories>
+		<repository>
+			<id>godoy</id>
+			<name>owner-rep</name>
+			<url>https://dl.bintray.com/godoy/graph</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -55,14 +62,9 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>org.jgrapht</groupId>
-			<artifactId>jgrapht-ext</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-		<dependency>
-			<groupId>org.jgrapht</groupId>
-			<artifactId>jgrapht-core</artifactId>
-			<version>1.0.1</version>
+			<groupId>br.com.fggraph</groupId>
+			<artifactId>fg-graph-lib</artifactId>
+			<version>1.0</version>
 		</dependency>
 	</dependencies>
 </project>

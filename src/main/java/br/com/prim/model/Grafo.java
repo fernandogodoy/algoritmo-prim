@@ -21,8 +21,8 @@ public class Grafo {
 
 	public void add(Aresta aresta) {
 		this.arestas.add(aresta);
-		this.vertices.add(aresta.getOrigem());
-		this.vertices.add(aresta.getDestino());
+		this.vertices.add(aresta.getOrigin());
+		this.vertices.add(aresta.getTarget());
 	}
 
 	@Override
@@ -48,7 +48,7 @@ public class Grafo {
 	 * @return Vertices adjacentes ordenados por peso
 	 */
 	public List<Aresta> getAdjacentes(Vertice origem) {
-		return arestas.stream().filter(aresta -> aresta.getOrigem().equals(origem)).sorted()
+		return arestas.stream().filter(aresta -> aresta.getOrigin().equals(origem)).sorted()
 				.collect(Collectors.toList());
 	}
 

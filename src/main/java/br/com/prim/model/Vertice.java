@@ -2,12 +2,16 @@ package br.com.prim.model;
 
 import java.util.Objects;
 
+import br.com.fggraph.model.Vertex;
+
 /**
  * 
  * @author Fernando
  *
  */
-public class Vertice {
+public class Vertice implements Vertex {
+
+	private static final long serialVersionUID = 1L;
 
 	private String id;
 
@@ -17,7 +21,8 @@ public class Vertice {
 		this.id = id;
 	}
 
-	public String getId() {
+	@Override
+	public String getName() {
 		return id;
 	}
 
